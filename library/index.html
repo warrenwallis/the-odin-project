@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project : Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container" class="flex-container">
+    </div>
+
+    <dialog>
+        <button autofocus id="closeModalButton">Close</button>
+        <p style="font-size: 20px">Add a New Book!</p>
+        <form id="modalForm">
+            <label>
+                Title
+                <input type="text" name="title">
+            </label>
+            <label>
+                Author
+                <input type="text" name="author">
+            </label>
+            <label>
+                Number of Pages
+                <input type="number" name="numPages">
+            </label>
+            <label>
+                Read?
+                <input type="checkbox" name="hasRead">
+            </label>
+            <button id="addBook">Add Book</button>
+        </form>
+    </dialog>
+
+    <script src="library.js"></script>
+</body>
+</html>
