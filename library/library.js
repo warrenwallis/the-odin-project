@@ -18,7 +18,7 @@ function display() {
 
     for (let i = 0; i < myLibrary.length; i++) {
         const div = document.createElement('div');
-        div.setAttribute('style', 'width: 150px; height: 200px; color: black; padding: 6px; border: 1px solid brown');
+        div.setAttribute('style', 'width: 150px; height: 250px; color: black; padding: 6px; border: 1px solid brown');
         
         const title = document.createElement('div');
         title.setAttribute('style', 'font-size: 24px');
