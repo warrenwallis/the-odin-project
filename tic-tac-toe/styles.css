@@ -1,0 +1,12 @@
+:root {
+    --primary-color-neutral: #162A90;
+    --primary-color-darkest: #0F1D63;
+    --primary-color-lightest: #BBC1E0;
+  }
+
+.borders {
+    border-right: 4px solid var(--primary-color-darkest);
+    border-top: 4px solid var(--primary-color-darkest);
+    border-left: 4px solid var(--primary-color-darkest);
+    border-bottom: 4px solid var(--primary-color-darkest);
+}
