@@ -37,4 +37,30 @@ mainContent.appendChild(leftDiv);
 
 /* BEGIN : Controls */
 
+const playerLegend = (parent, id, name, tag) => {
+    const playerTag = document.createElement('div');
+
+    const constructor = (() => {
+        const container = document.createElement('div');
+        container.setAttribute('style', 'display: flex; flex-direction: col; background: var(--primary-color-darkest); color: var(--primary-color-lightest); padding: 15px 40px; border-radius: 15px; gap: 5px');
+
+        const playerHandle = document.createElement('div');
+        container.textContent = `${name}:`;
+        container.appendChild(playerHandle);
+        
+        playerTag.textContent = `${tag}`;
+        container.appendChild(playerTag);
+        
+        parent.appendChild(container);
+    })();
+
+    return { playerTag };
+}
+
 const rightDiv = document.createElement('div');
+rightDiv.setAttribute('styles', 'display: flex; justify-content: center');
+
+
+
+
+/* END : Controls */
