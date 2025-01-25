@@ -1,13 +1,3 @@
-const Score = (parent, id, name, score = 0) => {
-    const player = playerLegend(parent, id, name, score);
-
-    const updateScore = () => {
-        player.playerTag.textContent = `${++score}`;
-    }
-
-    return { id, updateScore };
-}
-
 const header = document.getElementById('header');
 header.setAttribute('style', 'display: flex; background: var(--primary-color-lightest); padding: 25px 120px');
 
