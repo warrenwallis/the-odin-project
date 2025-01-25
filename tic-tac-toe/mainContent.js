@@ -1,10 +1,12 @@
+import { playerLegend } from "./components.js";
+
 const mainContent = document.getElementById('mainContent');
-mainContent.setAttribute('style', 'display: flex; flex-direction: col; width: 100vw');
+mainContent.setAttribute('style', 'display: flex; flex-direction: col; padding: 50px 120px');
 
 /* BEGIN : Board */
 
 const leftDiv = document.createElement('div');
-leftDiv.setAttribute('style', 'display: flex; justify-content: center; align-items: center; border: 2px solid black; height: 50%; width: 50%');
+leftDiv.setAttribute('style', 'display: flex; justify-content: center; align-items: center; border: 2px solid black; height: 50vw; width: 70vw');
 
 const board = document.createElement('div');
 board.setAttribute('style', 'display: grid; grid-template-columns: repeat(3, 1fr)');
@@ -38,9 +40,15 @@ mainContent.appendChild(leftDiv);
 /* BEGIN : Controls */
 
 const rightDiv = document.createElement('div');
-rightDiv.setAttribute('styles', 'display: flex; justify-content: center');
+rightDiv.setAttribute('style', 'display: flex; justify-content: center; border: 2px solid black; height: 50vw; width: 30vw');
 
+const playerLegendDiv = document.createElement('div');
+playerLegendDiv.setAttribute('style', 'display: flex; flex-direction: col');
+const playerLegend1 = playerLegend(playerLegendDiv, 'player1Legend', 'Player 1');
+const playerlegend2 = playerLegend(playerLegendDiv, 'player2Legend', 'Player 2');
 
+rightDiv
+mainContent.appendChild(rightDiv);
 
 
 /* END : Controls */

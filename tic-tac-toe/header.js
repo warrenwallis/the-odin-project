@@ -1,3 +1,5 @@
+import { Score } from "./components.js";
+
 const header = document.getElementById('header');
 header.setAttribute('style', 'display: flex; background: var(--primary-color-lightest); padding: 25px 120px');
 

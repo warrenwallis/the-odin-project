@@ -1,4 +1,4 @@
-const playerLegend = (parent, id, name, tag) => {
+export const playerLegend = (parent, id, name, tag) => {
     const playerTag = document.createElement('div');
 
     const constructor = (() => {
@@ -18,7 +18,7 @@ const playerLegend = (parent, id, name, tag) => {
     return { playerTag };
 }
 
-const Score = (parent, id, name, score = 0) => {
+export const Score = (parent, id, name, score = 0) => {
     const player = playerLegend(parent, id, name, score);
 
     const updateScore = () => {
