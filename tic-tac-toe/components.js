@@ -66,13 +66,17 @@ export const Board = (parent) => {
 
     const resetGame = () => {
         for (let boardSquare of boardSquares) {
-            boardSquare.resetGame();
+            boardSquare.resetSquare();
         }
 
         console.log(boardSquares);
     }
 
-    return { resetGame };
+    const resetSquare = (idx) => {
+        boardSquares[idx].resetSquare();
+    }
+
+    return { resetGame, resetSquare };
 }
 
 export const BoardSquare = (props) => {
@@ -83,10 +87,14 @@ export const BoardSquare = (props) => {
     const constructor = (() => {
         boardSquare.setAttribute('style', 'display: flex; justify-content: center; align-items: center; box-sizing: border-box; padding: 25px; width: 150px; height: 150px');
         boardSquare.id = `boardSquare${numbers}`;
+        boardSquare.setAttribute('key', numbers);
         boardSquare.className = 'borders';
         boardSquare.addEventListener('click', () => {
-            boardSquare.textContent = game.currPlayerSymbol();
-            game.nextPlayer();
+            if (boardSquare.textContent === '') {
+                boardSquare.textContent = game.currPlayerSymbol();
+                game.addMove(boardSquare);
+                game.nextPlayer();
+            } else console.log('error');
         });
 
         for (let board of borders[numbers]) {
@@ -96,11 +104,11 @@ export const BoardSquare = (props) => {
         board.appendChild(boardSquare);
     })();
 
-    const resetGame = () => {
+    const resetSquare = () => {
         boardSquare.textContent = '';
     }
 
-    return { boardSquare, resetGame };
+    return { boardSquare, resetSquare };
 }
 
 export const Legend = (parent) => {
@@ -115,19 +123,27 @@ export const Legend = (parent) => {
 
 export const Banner = (parent) => {
     const banner = document.createElement('div');
-    banner.setAttribute('style', 'display: flex; justify-content: center; align-items: center; flex: 1;');
-    banner.textContent = 'hello';
 
-    parent.appendChild(banner);
+    const constructor = (() => {
+        banner.setAttribute('style', 'display: flex; justify-content: center; align-items: center; flex: 1;');
+
+        parent.appendChild(banner);
+    })();
+
+    const setMessage = (message) => {
+        banner.textContent = message;
+    }
+
+    return { setMessage };
 }
 
 export const Controls = (props) => {
-    const { parent, board } = props;
+    const { parent, board, banner } = props;
 
     const buttonsDiv = document.createElement('div');
     buttonsDiv.setAttribute('style', 'display: flex; flex-direction: column; gap: 10px;');
     const redoButton = Button(buttonsDiv, 'redoButton', 'Redo', () => {
-        console.log('redo');
+        game.redoMove(board, banner);
     });
     const resetGameButton = Button(buttonsDiv, 'resetGameButton', 'Reset Game', () => {
         game.resetGame();

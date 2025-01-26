@@ -14,6 +14,7 @@ function createPlayer(name, marking, points) {
 function createGame() {
     const players = [ createPlayer(1, 0, 0), createPlayer(2, 1, 0) ];
     let currPlayerIdx = 0;
+    const moves = [];
 
     const nextPlayer = () => currPlayerIdx = (currPlayerIdx + 1) % players.length;
     const currPlayerSymbol = () => markings[currPlayerIdx];
@@ -24,8 +25,21 @@ function createGame() {
             players[i].reset();
         }
     }
+    const addMove = (boardSquare) => {
+        moves.push(boardSquare);
+        console.log(moves);
+    }
+    const redoMove = (board, banner) => {
+        if (moves.length > 0) {
+            const boardSquare = moves.pop();
+            board.resetSquare(boardSquare.getAttribute('key'));
+            nextPlayer();
+        } else banner.setMessage("No Moves to Redo!");
 
-    return { currPlayerIdx, currPlayerSymbol, nextPlayer, win, resetGame, resetScores };
+        console.log(moves);
+    }
+
+    return { currPlayerIdx, currPlayerSymbol, nextPlayer, win, resetGame, resetScores, addMove, redoMove };
 }
 
 const game = createGame();
