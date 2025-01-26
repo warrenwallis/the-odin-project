@@ -1,3 +1,5 @@
+import { game } from './tictactoe.js';
+
 export const PlayerLegend = (parent, id, name, tag, styles = '') => {
     const playerTag = document.createElement('div');
 
@@ -42,32 +44,63 @@ export const Button = (parent, id, content, action) => {
 }
 
 export const Board = (parent) => {
-    const board = document.createElement('div');
-    board.setAttribute('style', 'display: grid; grid-template-columns: repeat(3, 1fr)');
-    
     const borders = [
         [1, 2], [1], [0, 1],
         [2], [], [0],
         [2, 3], [3], [0, 3]
-    ]
+    ];
     const borderMappings = ['border-right', 'border-top', 'border-left', 'border-bottom'];
-    
-    for (let i = 0; i < borders.length; i++) {
-        const boardSquare = document.createElement('div');
-        boardSquare.setAttribute('style', 'display: flex; justify-content: center; align-items: center; box-sizing: border-box; padding: 25px');
-        boardSquare.id = `boardSquare${i}`;
+    const boardSquares = [];
+
+    const constructor = (() => {
+        const board = document.createElement('div');
+        board.setAttribute('style', 'display: grid; grid-template-columns: repeat(3, 1fr)');
+        
+        for (let i = 0; i < borders.length; i++) {
+            const boardSquare = BoardSquare({ board, numbers: i, borders, borderMappings });
+            boardSquares.push(boardSquare);
+        }
+        
+        parent.appendChild(board);
+    })();
+
+    const resetGame = () => {
+        for (let boardSquare of boardSquares) {
+            boardSquare.resetGame();
+        }
+
+        console.log(boardSquares);
+    }
+
+    return { resetGame };
+}
+
+export const BoardSquare = (props) => {
+    const { board, numbers, borders, borderMappings } = props;
+
+    const boardSquare = document.createElement('div');
+
+    const constructor = (() => {
+        boardSquare.setAttribute('style', 'display: flex; justify-content: center; align-items: center; box-sizing: border-box; padding: 25px; width: 150px; height: 150px');
+        boardSquare.id = `boardSquare${numbers}`;
         boardSquare.className = 'borders';
-        boardSquare.textContent = `boardSquare${i}`;
-        boardSquare.addEventListener('click', () => console.log(`Square ${i} clicked!`));
-    
-        for (let board of borders[i]) {
+        boardSquare.addEventListener('click', () => {
+            boardSquare.textContent = game.currPlayerSymbol();
+            game.nextPlayer();
+        });
+
+        for (let board of borders[numbers]) {
             boardSquare.style[borderMappings[board]] = '0px'
         }
-    
+
         board.appendChild(boardSquare);
+    })();
+
+    const resetGame = () => {
+        boardSquare.textContent = '';
     }
-    
-    parent.appendChild(board);
+
+    return { boardSquare, resetGame };
 }
 
 export const Legend = (parent) => {
@@ -88,14 +121,17 @@ export const Banner = (parent) => {
     parent.appendChild(banner);
 }
 
-export const Controls = (parent) => {
+export const Controls = (props) => {
+    const { parent, board } = props;
+
     const buttonsDiv = document.createElement('div');
     buttonsDiv.setAttribute('style', 'display: flex; flex-direction: column; gap: 10px;');
     const redoButton = Button(buttonsDiv, 'redoButton', 'Redo', () => {
         console.log('redo');
     });
     const resetGameButton = Button(buttonsDiv, 'resetGameButton', 'Reset Game', () => {
-        console.log('resetGame');
+        game.resetGame();
+        board.resetGame();
     });
     const resetScoresButton = Button(buttonsDiv, 'resetScoresButton', 'Reset Scores', () => {
         console.log('resetScores');

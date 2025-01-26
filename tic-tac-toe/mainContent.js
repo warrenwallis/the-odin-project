@@ -21,10 +21,8 @@ rightDiv.id = 'mainContentRightDiv';
 
 const playerLegendDiv = Legend(rightDiv);
 const banner = Banner(rightDiv);
-const buttonsDiv = Controls(rightDiv);
+const buttonsDiv = Controls({ parent: rightDiv, board });
 
 mainContent.appendChild(rightDiv);
-
-
 
 /* END : Controls */
