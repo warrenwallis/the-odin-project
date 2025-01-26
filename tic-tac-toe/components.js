@@ -57,7 +57,7 @@ export const Board = (parent) => {
         board.setAttribute('style', 'display: grid; grid-template-columns: repeat(3, 1fr)');
         
         for (let i = 0; i < borders.length; i++) {
-            const boardSquare = BoardSquare({ board, numbers: i, borders, borderMappings });
+            const boardSquare = BoardSquare({ board, numbers: i, borders, borderMappings});
             boardSquares.push(boardSquare);
         }
         
@@ -80,7 +80,7 @@ export const Board = (parent) => {
 }
 
 export const BoardSquare = (props) => {
-    const { board, numbers, borders, borderMappings } = props;
+    const { board, numbers, borders, borderMappings} = props;
 
     const boardSquare = document.createElement('div');
 
@@ -94,7 +94,7 @@ export const BoardSquare = (props) => {
                 boardSquare.textContent = game.currPlayerSymbol();
                 game.addMove(boardSquare);
                 game.nextPlayer();
-            } else console.log('error');
+            }
         });
 
         for (let board of borders[numbers]) {
@@ -126,6 +126,7 @@ export const Banner = (parent) => {
 
     const constructor = (() => {
         banner.setAttribute('style', 'display: flex; justify-content: center; align-items: center; flex: 1;');
+        banner.textContent = `Player ${game.currPlayerName()}'s turn`;
 
         parent.appendChild(banner);
     })();

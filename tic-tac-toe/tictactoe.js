@@ -16,10 +16,17 @@ function createGame() {
     let currPlayerIdx = 0;
     const moves = [];
 
-    const nextPlayer = () => currPlayerIdx = (currPlayerIdx + 1) % players.length;
+    const nextPlayer = () => {
+        currPlayerIdx = (currPlayerIdx + 1) % players.length;
+        globalBanner.setMessage(`Player ${players[currPlayerIdx].name}'s turn`);
+    }
     const currPlayerSymbol = () => markings[currPlayerIdx];
+    const currPlayerName = () => players[currPlayerIdx].name;
     const win = () => players[currPlayerIdx].incrementPoints();
-    const resetGame = () => currPlayerIdx = 0;
+    const resetGame = () => {
+        currPlayerIdx = 0
+        globalBanner.setMessage(`Player ${players[currPlayerIdx].name}'s turn`);
+    };
     const resetScores = () => {
         for (let i = 0; i < players.length; i++) {
             players[i].reset();
@@ -33,13 +40,13 @@ function createGame() {
         if (moves.length > 0) {
             const boardSquare = moves.pop();
             board.resetSquare(boardSquare.getAttribute('key'));
-            nextPlayer();
+            nextPlayer(banner);
         } else banner.setMessage("No Moves to Redo!");
 
         console.log(moves);
     }
 
-    return { currPlayerIdx, currPlayerSymbol, nextPlayer, win, resetGame, resetScores, addMove, redoMove };
+    return { currPlayerIdx, currPlayerSymbol, currPlayerName, nextPlayer, win, resetGame, resetScores, addMove, redoMove };
 }
 
 const game = createGame();

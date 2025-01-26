@@ -13,16 +13,15 @@ mainContent.appendChild(leftDiv);
 
 /* END : Board */
 
-/* BEGIN : Controls */
-
 const rightDiv = document.createElement('div');
 rightDiv.setAttribute('style', 'display: flex; flex-direction: column; justify-content: end; height: 50vw; width: 35vw;');
 rightDiv.id = 'mainContentRightDiv';
 
 const playerLegendDiv = Legend(rightDiv);
 const banner = Banner(rightDiv);
+globalBanner = banner;
 const buttonsDiv = Controls({ parent: rightDiv, board, banner });
 
 mainContent.appendChild(rightDiv);
 
-/* END : Controls */
+export { board };
