@@ -10,6 +10,6 @@ header.appendChild(pageTitle);
 
 const PlayerScoreBoard = document.createElement('div');
 PlayerScoreBoard.setAttribute('style', 'display: flex;  gap: 10px; justify-content: end; flex: 1;');
-const player1 = Score(PlayerScoreBoard, 'player1ScoreBoard', 'Player 1');
-const player2 = Score(PlayerScoreBoard, 'player2ScoreBoard', 'Player 2');
+const player1 = Score(PlayerScoreBoard, 'player1ScoreBoard', 'Player 1:');
+const player2 = Score(PlayerScoreBoard, 'player2ScoreBoard', 'Player 2:');
 header.appendChild(PlayerScoreBoard);
