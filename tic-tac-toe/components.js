@@ -20,11 +20,12 @@ export const PlayerLegend = (parent, id, name, tag, styles = '') => {
     return { playerTag };
 }
 
-export const Score = (parent, id, name, score = 0, styles = '') => {
+export const Score = (props) => {
+    const { parent, id, name, score, styles, playerObject } = props;
     const player = PlayerLegend(parent, id, name, score, styles);
 
     const updateScore = () => {
-        player.playerTag.textContent = `${++score}`;
+        player.playerTag.textContent = playerObject.getPoints();
     }
 
     return { id, updateScore };
@@ -52,12 +53,16 @@ export const Board = (parent) => {
     const borderMappings = ['border-right', 'border-top', 'border-left', 'border-bottom'];
     const boardSquares = [];
 
+    const checkBoard = () => {
+        game.checkMove(boardSquares);
+    }
+
     const constructor = (() => {
         const board = document.createElement('div');
         board.setAttribute('style', 'display: grid; grid-template-columns: repeat(3, 1fr)');
         
         for (let i = 0; i < borders.length; i++) {
-            const boardSquare = BoardSquare({ board, numbers: i, borders, borderMappings});
+            const boardSquare = BoardSquare({ board, numbers: i, borders, borderMappings, checkBoard });
             boardSquares.push(boardSquare);
         }
         
@@ -80,7 +85,7 @@ export const Board = (parent) => {
 }
 
 export const BoardSquare = (props) => {
-    const { board, numbers, borders, borderMappings} = props;
+    const { board, numbers, borders, borderMappings, checkBoard } = props;
 
     const boardSquare = document.createElement('div');
 
@@ -90,9 +95,10 @@ export const BoardSquare = (props) => {
         boardSquare.setAttribute('key', numbers);
         boardSquare.className = 'borders';
         boardSquare.addEventListener('click', () => {
-            if (boardSquare.textContent === '') {
+            if (boardSquare.textContent === '' && game.checkAllowPlay()) {
                 boardSquare.textContent = game.currPlayerSymbol();
                 game.addMove(boardSquare);
+                checkBoard();
                 game.nextPlayer();
             }
         });
@@ -151,7 +157,8 @@ export const Controls = (props) => {
         board.resetGame();
     });
     const resetScoresButton = Button(buttonsDiv, 'resetScoresButton', 'Reset Scores', () => {
-        console.log('resetScores');
+        game.resetScores();
+        board.resetGame();
     });
 
 
