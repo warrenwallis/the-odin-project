@@ -164,3 +164,19 @@ export const Controls = (props) => {
 
     parent.appendChild(buttonsDiv);
 }
+
+export const ImageLink = (props) => {
+    const { parent, src, onClick } = props;
+
+    const img = document.createElement('img');
+
+    const constructor = (() => {
+        img.setAttribute('style', 'margin: 0px 5px; width: 25px; height: 25px');
+        img.addEventListener('click', onClick);
+        img.src = src;
+
+        parent.appendChild(img);
+    })();
+
+    return { img };
+}

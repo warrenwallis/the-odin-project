@@ -5,7 +5,7 @@ const header = document.getElementById('header');
 header.setAttribute('style', 'display: flex; background: var(--primary-color-lightest); padding: 25px 120px');
 
 const pageTitle = document.createElement('div');
-pageTitle.setAttribute('style', 'display: flex; align-items: center; flex: 1; color: vars(--primary-color-darkest); font-size: 26px');
+pageTitle.setAttribute('style', 'display: flex; align-items: center; flex: 1; color: var(--primary-color-darkest); font-size: 26px');
 pageTitle.textContent = 'Tic Tac Toe';
 header.appendChild(pageTitle);
 

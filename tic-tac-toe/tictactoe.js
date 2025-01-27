@@ -53,6 +53,8 @@ function createGame() {
         console.log(moves);
     }
     const redoMove = (board, banner) => {
+        if (!allowPlay) return;
+        
         if (moves.length > 0) {
             const boardSquare = moves.pop();
             board.resetSquare(boardSquare.getAttribute('key'));
