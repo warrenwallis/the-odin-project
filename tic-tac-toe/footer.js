@@ -1,7 +1,7 @@
 import { ImageLink } from "./components.js";
 
 const footer = document.getElementById('footer');
-footer.setAttribute('style', 'display: flex; justify-content: center; align-items: center; height: 45px; border: 2px solid black; color: var(--primary-color-darkest)');
+footer.setAttribute('style', 'display: flex; justify-content: center; align-items: center; height: 45px; color: var(--primary-color-darkest)');
 
 const infoDiv = document.createElement('div');
 infoDiv.textContent = "Designed & Created by Warren Pagsuguiron";
