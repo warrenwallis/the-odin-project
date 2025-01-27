@@ -119,7 +119,7 @@ export const BoardSquare = (props) => {
 
 export const Legend = (parent) => {
     const playerLegendDiv = document.createElement('div');
-    playerLegendDiv.setAttribute('style', 'display: flex; gap: 10px; border: 2px solid black');
+    playerLegendDiv.setAttribute('style', 'display: flex; gap: 10px;');
     playerLegendDiv.id = 'playerLegendDiv';
     const player1 = PlayerLegend(playerLegendDiv, 'player1Legend', 'Player 1', 'X', 'background: var(--primary-color-lightest); color: var(--primary-color-darkest); width: 100%; justify-content: center');
     const player2 = PlayerLegend(playerLegendDiv, 'player2Legend', 'Player 2', 'O', 'background: var(--primary-color-lightest); color: var(--primary-color-darkest); width: 100%; justify-content: center');
