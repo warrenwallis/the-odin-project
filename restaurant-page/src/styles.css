@@ -6,3 +6,24 @@ body {
     padding: 0px 120px;
     letter-spacing: 2px;
 }
+
+.navButton {
+    border: 0;
+    background: white;
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0px;
+    margin-bottom: 75px;
+}
+
+#logo {
+    border: 0;
+    background: white;
+    font-size: 40px;
+}
