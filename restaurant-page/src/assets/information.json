@@ -1,0 +1,46 @@
+{
+    "home" : {
+    },
+    "menu" : {
+        "items" : [
+            {
+                "name": "Bombay Street Wrap",
+                "description": "Spiced potato filling with mint chutney and pickled onions wrapped in a paratha.",
+                "price": "$9.99"
+            },
+            {
+                "name": "Korean BBQ Fries",
+                "description": "Crispy fries topped with bulgogi beef, kimchi, and spicy mayo.",
+                "price": "$11.49"
+            },
+            {
+                "name": "Churro Bites",
+                "description": "Mini churros dusted in cinnamon sugar with chocolate dipping sauce.",
+                "price": "$6.99"
+            },
+            {
+                "name": "Bangkok Crispy Wings",
+                "description": "Thai-style fried chicken wings tossed in a sweet chili glaze, topped with sesame seeds.",
+                "price": "$10.99"
+            },
+            {
+                "name": "Spicy Paneer Pakoras",
+                "description": "Indian-style battered and fried paneer cubes served with tangy tamarind chutney.",
+                "price": "$9.49"
+            },
+            {
+                "name": "Elote Loco",
+                "description": "Grilled Mexican street corn coated with chipotle mayo, cotija cheese, and tajín.",
+                "price": "$6.99"
+            },
+            {
+                "name": "Hibiscus Agua Fresca",
+                "description": "A refreshing, lightly sweetened hibiscus iced tea.",
+                "price": "$4.99"
+            }
+        ]
+    },
+    "about" : {
+
+    }
+}
