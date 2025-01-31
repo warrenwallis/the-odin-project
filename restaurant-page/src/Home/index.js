@@ -14,11 +14,11 @@ const Home = (props) => {
         container.append(leftDiv, rightDiv);
         parent.append(container);
 
-        container.setAttribute('style', 'display: flex; justify-content: space-between; width: 100%');
+        container.setAttribute('style', 'display: flex; justify-content: space-between; width: 100%; margin-top: 75px');
         leftDiv.setAttribute('style', 'padding: 77px 0px');
         rightDiv.setAttribute('style', 'border-radius: 10px;');
-        photo.src = homeContent;
 
+        photo.src = homeContent;
         const heroSection = HeroSection({ parent: leftDiv });
         const callToAction = CallToAction({ parent: leftDiv });
     })();
