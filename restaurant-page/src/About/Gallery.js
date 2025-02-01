@@ -16,8 +16,8 @@ const Gallery = (props) => {
         parent.append(container);
         
         container.setAttribute('style', 'display: grid; gap: 15px; grid-template-columns: repeat(3, 1fr); grid-auto-rows: minmax(150px, auto)');
-        one.setAttribute('style', 'grid-column: 3/3; grid-row: 1/3; width: 100%; height: 100%; object-fit: cover');
-        two.setAttribute('style', 'grid-column: 1/3; grid-row: 1; width: 100%; height: 100%; object-fit: cover');
+        one.setAttribute('style', 'grid-column: 3/3; grid-row: 1/3; width: 100%; height: 100%; object-fit: cover; border-radius: 0 0 10px 0');
+        two.setAttribute('style', 'grid-column: 1/3; grid-row: 1; width: 100%; height: 100%; object-fit: cover; border-radius: 10px 0 0 0');
         three.setAttribute('style', 'grid-column: 1/2; grid-row: 2/2; width: 100%; height: 100%; object-fit: cover');
         four.setAttribute('style', 'grid-column: 2/3; grid-row: 2/2; width: 100%; height: 100%; object-fit: cover');
 

@@ -19,7 +19,7 @@ const About = (props) => {
         container.setAttribute('style', 'margin-top: 25px');
         bottomInformation.setAttribute('style', 'display: flex; gap: 25px; width: 100%');
         otherInformation.setAttribute('style', 'width: 40%');
-        gallery.setAttribute('style', 'flex: 1');
+        gallery.setAttribute('style', 'flex: 1;');
 
         for (let [ title, description ] of Object.entries(about.our)) {
             InformationBanner({ parent: ourInformation,  title: `Our ${title.charAt(0).toUpperCase() + title.slice(1)}`, description: (() => {
