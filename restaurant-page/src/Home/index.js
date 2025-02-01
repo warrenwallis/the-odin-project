@@ -14,7 +14,7 @@ const Home = (props) => {
         container.append(leftDiv, rightDiv);
         // parent.append(container);
 
-        container.setAttribute('style', 'display: flex; justify-content: space-between; width: 100%; margin-top: 75px');
+        container.setAttribute('style', 'display: flex; flex: 1; justify-content: space-between; width: 100%; margin-top: 75px');
         leftDiv.setAttribute('style', 'padding: 77px 0px');
         rightDiv.setAttribute('style', 'border-radius: 10px;');
 

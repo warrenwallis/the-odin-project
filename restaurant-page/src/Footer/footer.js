@@ -19,7 +19,7 @@ const Footer = () => {
         footerDiv.append(container);
 
         footerDiv.setAttribute('style', 'display: flex; align-items: end; flex: 1; height: 100%');
-        container.setAttribute('style', 'display: flex; justify-content: center; align-items: center; width: 100%; margin-top: 50px');
+        container.setAttribute('style', 'display: flex; justify-content: center; align-items: center; width: 100%; margin-top: 50px; margin-bottom: 15px');
         name.setAttribute('style', 'font-size: 10px');
 
         name.textContent = 'Design and Created by Warren Pagsuguiron';
