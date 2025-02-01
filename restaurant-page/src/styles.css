@@ -1,6 +1,7 @@
 :root {
     --button-color: #10130F;
-    --semi-bold: 550;
+    --medium: 500;
+    --semi-bold: 600;
 }
 
 body {
@@ -28,4 +29,10 @@ header {
     background: white;
     font-size: 40px;
     padding: 0;
+}
+
+#spacer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }

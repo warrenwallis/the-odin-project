@@ -41,6 +41,25 @@
         ]
     },
     "about" : {
-
+        "our" : {
+            "story": "At Street Spice, we bring the bold, vibrant flavors of global street food to your plate. Inspired by the world’s most iconic street markets—from the sizzling night stalls of Bangkok to the bustling food carts of Mexico City—we create dishes that celebrate spice, culture, and adventure. Every bite is a journey, every dish is a story.",
+            "mission": "We believe that food is a universal language that brings people together. Our mission is to serve authentic, handcrafted, and flavor-packed street food using fresh ingredients and traditional cooking techniques. Whether you're craving fiery heat, tangy zest, or rich umami, Street Spice is your passport to a world of taste."
+        },
+        "location": {
+            "address": "123 Flavors Avenue, Food District, NY 10001",
+            "hours": {
+                "Monday-Thursday": "11 AM - 10 PM",
+                "Friday-Saturday": "11 AM - 11:30 PM",
+                "Sunday": "12 PM - 9 PM"
+            }
+        },
+        "contact": {
+            "phone": "(555) 987-6543",
+            "email": "hello@streetspice.com",
+            "social": "@StreetSpiceEats on Instagram & Facebook"
+        },
+        "newsletter": {
+            "description": "Join the Spice Squad! Sign up for exclusive updates, special deals, and first access to new menu items."
+        }
     }
 }
