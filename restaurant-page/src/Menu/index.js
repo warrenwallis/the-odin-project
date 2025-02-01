@@ -5,6 +5,7 @@ const Menu = (props) => {
     const { parent } = props;
     const { menu } = information;
     const requireContext = require.context('../assets', false, /\.png$/);
+    const container = document.createElement('div');
     const images = {};
 
     requireContext.keys().forEach(element => {
@@ -12,8 +13,7 @@ const Menu = (props) => {
     });
 
     const constructor = (() => {
-        const container = document.createElement('div');
-        parent.append(container);
+        // parent.append(container);
 
         container.setAttribute('style', 'display: flex; flex-direction: column; gap: 25px; width: 100%; margin-top: 25px');
 
@@ -22,6 +22,8 @@ const Menu = (props) => {
         }
         
     })();
+
+    return { container };
 }
 
 export default Menu;
