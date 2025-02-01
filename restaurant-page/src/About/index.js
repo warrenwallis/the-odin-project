@@ -1,21 +1,25 @@
 import information from '../assets/information.json';
+import Gallery from './Gallery';
 import InformationBanner from './OurInformation';
 
 const About = (props) => {
     const { parent } = props;
     const { about } = information; 
+    const container = document.createElement("div");
 
     const constructor = (() => {
-        const container = document.createElement("div");
         const ourInformation = document.createElement("div");
         const bottomInformation = document.createElement('div');
         const otherInformation = document.createElement('div');
         const gallery = document.createElement('div');
         bottomInformation.append(otherInformation, gallery);
         container.append(ourInformation, bottomInformation);
-        parent.append(container);
+        // parent.append(container);
 
         container.setAttribute('style', 'margin-top: 25px');
+        bottomInformation.setAttribute('style', 'display: flex; gap: 25px; width: 100%');
+        otherInformation.setAttribute('style', 'width: 40%');
+        gallery.setAttribute('style', 'flex: 1');
 
         for (let [ title, description ] of Object.entries(about.our)) {
             InformationBanner({ parent: ourInformation,  title: `Our ${title.charAt(0).toUpperCase() + title.slice(1)}`, description: (() => {
@@ -26,7 +30,7 @@ const About = (props) => {
             })()});
         }
         InformationBanner({
-            parent: bottomInformation,
+            parent: otherInformation,
             title: 'Visit Us',
             description: (() => {
                 const desc = document.createElement('div');
@@ -60,7 +64,7 @@ const About = (props) => {
             })()
         });
         InformationBanner({
-            parent: bottomInformation,
+            parent: otherInformation,
             title: 'Get in Touch',
             description: (() => {
                 const Item = (props) => {
@@ -89,15 +93,17 @@ const About = (props) => {
                 return desc;
             })()
         });
-        InformationBanner({ parent: bottomInformation, title: 'Join the Spice Squad!', description: (() => {
+        InformationBanner({ parent: otherInformation, title: 'Join the Spice Squad!', description: (() => {
             const desc = document.createElement('div');
 
             desc.textContent = about.newsletter.description;
 
             return desc;
         })()});
-
+        Gallery({ parent: gallery });
     })();
+
+    return { container };
 }
 
 export default About;
