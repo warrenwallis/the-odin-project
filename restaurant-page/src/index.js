@@ -3,6 +3,7 @@ import Home from './Home';
 import Menu from './Menu';
 import About from './About';
 import NavBarLogic from './NavBar/logic';
+import Footer from './Footer/footer';
 // const home = Home({ parent: content });
 // const menu = Menu({ parent: content });
 
@@ -10,6 +11,5 @@ import NavBarLogic from './NavBar/logic';
 const Top = (() => {
     const content = document.getElementById('content');
     const navBarLogic = new NavBarLogic();
-
-    // const about = About({ parent: content });
+    const footer = Footer();
 })();

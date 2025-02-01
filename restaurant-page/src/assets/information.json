@@ -61,5 +61,27 @@
         "newsletter": {
             "description": "Join the Spice Squad! Sign up for exclusive updates, special deals, and first access to new menu items."
         }
+    },
+    "footer": {
+        "linkedin": {
+            "img": "./mdi_linkedin.png",
+            "link": "https://www.linkedin.com/in/warrenwallis/"
+        },
+        "github": {
+            "img": "./jam_github.png",
+            "link": "https://github.com/warrenwallis"
+        },
+        "leetcode": {
+            "img": "./cib_leetcode.png",
+            "link": "https://leetcode.com/u/warren_wallis/"
+        },
+        "email": {
+            "img": "./ic_baseline-email.png",
+            "link": "mailto:wspagsuguiron@gmail.com"
+        },
+        "instagram": {
+            "img": "./streamline_instagram-solid.png",
+            "link": "https://www.instagram.com/warren_wallis?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr"
+        }
     }
 }

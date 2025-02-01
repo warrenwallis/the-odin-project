@@ -5,8 +5,11 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     padding: 0px 120px;
     letter-spacing: 2px;
+    height: 100vh;
 }
 
 .navButton {
