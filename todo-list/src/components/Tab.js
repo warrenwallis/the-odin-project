@@ -1,5 +1,4 @@
-import checkedStar from '../assets/checked-star.png';
-import uncheckedStar from '../assets/unchecked-star.png';
+import Star from './Star';
 
 const Tab = (props) => {
     const { parent, check, checked, title, star, starred, description, date, note, styles } = props;
@@ -31,23 +30,6 @@ const Tab = (props) => {
         })();
     }
 
-    const StarDiv = (props) => {
-        const { parent } = props;
-
-        const constructor = (() => {
-            const img = document.createElement('img');
-            parent.append(img);
-
-            img.setAttribute('style', 'width: 20px');
-
-            if (starred) {
-                img.src = checkedStar;
-            } else {
-                img.src = uncheckedStar;
-            }
-        })();
-    }
-
     const constructor = (() => {
         const container = document.createElement('div');
         if (check) {
@@ -57,12 +39,7 @@ const Tab = (props) => {
         const informationDiv = document.createElement('div');
         container.append(informationDiv);
         if (star) {
-            const starDiv = document.createElement('div');
-            container.append(starDiv);
-
-            starDiv.setAttribute('style', 'display: flex; align-items: center; object-fit: cover');
-
-            StarDiv({ parent: starDiv });
+            Star({ parent: container, starred });
         }
         parent.append(container);
 

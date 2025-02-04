@@ -12,9 +12,10 @@ const AllLists = (props) => {
         container.setAttribute('style', 'display: flex; flex-direction: column; gap: 10px');
 
         container.textContent = 'All Lists';
-        for (let list of defaultLists) {
-            Tab({ parent: container, title: list, star: true, starred: true, styles: 'height: 60px' });
+        for (const { title } of defaultLists) {
+            Tab({ parent: container, title: title, star: true, starred: true, styles: 'height: 60px' });
         }
+
     })()
 }
 
