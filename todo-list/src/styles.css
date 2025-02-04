@@ -9,8 +9,10 @@
 }
 
 body {
+    display: flex;
     background-color: var(--cornsilk);
-    padding: 0 120px;
+    padding: 50px 120px;
+    margin: 0;
     height: 100vh;
 }
 

@@ -1,7 +1,7 @@
 import AllLists from "./AllLists";
 import Footer from "./Footer";
 import QuickLinks from "./QuickLinks";
-import SearchBar from "./SearchBar";
+import SearchBar from "../components/SearchBar";
 
 const Menu = (props) => {
     const { parent } = props;

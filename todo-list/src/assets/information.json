@@ -1,34 +1,43 @@
 {
-    "quickLinks" : [
-        "Plan",
-        "Important Lists",
-        "Important Tasks"
-    ],
-    "defaultLists" : [
-        "Personal",
-        "The Odin Project",
-        "University of California, Los Angeles"
-    ],
-    "footer": {
-        "linkedin": {
-            "src": "./mdi_linkedin.png",
-            "link": "https://www.linkedin.com/in/warrenwallis/"
-        },
-        "github": {
-            "src": "./jam_github.png",
-            "link": "https://github.com/warrenwallis"
-        },
-        "leetcode": {
-            "src": "./cib_leetcode.png",
-            "link": "https://leetcode.com/u/warren_wallis/"
-        },
-        "email": {
-            "src": "./ic_baseline-email.png",
-            "link": "mailto:wspagsuguiron@gmail.com"
-        },
-        "instagram": {
-            "src": "./streamline_instagram-solid.png",
-            "link": "https://www.instagram.com/warren_wallis?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr"
-        }
-    }
+	"quickLinks": ["Plan", "Important Lists", "Important Tasks"],
+	"defaultLists": [
+		{
+			"title": "Personal",
+            "starred": true,
+			"tasks": [
+					{
+						"title": "Get Groceries",
+						"starred": false,
+						"completed": false,
+						"description": "",
+						"date": "",
+						"note": ""
+					}
+				]
+		},
+		{ "title": "The Odin Project", "starred": false, "tasks": [] },
+		{ "title": "University of California, Los Angeles", "starred": false, "tasks": [] }
+	],
+	"footer": {
+		"linkedin": {
+			"src": "./mdi_linkedin.png",
+			"link": "https://www.linkedin.com/in/warrenwallis/"
+		},
+		"github": {
+			"src": "./jam_github.png",
+			"link": "https://github.com/warrenwallis"
+		},
+		"leetcode": {
+			"src": "./cib_leetcode.png",
+			"link": "https://leetcode.com/u/warren_wallis/"
+		},
+		"email": {
+			"src": "./ic_baseline-email.png",
+			"link": "mailto:wspagsuguiron@gmail.com"
+		},
+		"instagram": {
+			"src": "./streamline_instagram-solid.png",
+			"link": "https://www.instagram.com/warren_wallis?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr"
+		}
+	}
 }
