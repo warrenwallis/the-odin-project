@@ -4,7 +4,7 @@ import noteImg from '../assets/note.png';
 import dateImg from '../assets/calendar.png';
 
 const Tab = (props) => {
-    const { parent, index, check, checked, updateCheck, title, star, starred, addDescription, description, date, note, styles } = props;
+    const { parent, index, check, checked, updateCheck, title, star, starred, addDescription, description, date, note, styles, idx, showListIdx, setShowListIdx=()=>{}, render=()=>{} } = props;
 
     const InformationDiv = (props) => {
         const { parent } = props;
@@ -74,8 +74,12 @@ const Tab = (props) => {
         }
         parent.append(container);
 
-        container.setAttribute('style', `display: flex; justify-content: space-between; background: var(--pakistan-green); color: var(--cornsilk); padding: 6px 10px; border-radius: 5px; font-weight: var(--medium); font-size: 12px; ${styles}`);
+        container.setAttribute('style', `display: flex; justify-content: space-between; color: var(--cornsilk); padding: 6px 10px; border-radius: 5px; font-weight: var(--medium); background: var(--pakistan-green); font-size: 12px; ${styles}`);
         informationDiv.setAttribute('style', 'display: flex; flex-direction: column; flex: 1; justify-content: center');
+        informationDiv.addEventListener('click', () => {
+            setShowListIdx(idx);
+            render();
+        })
 
         InformationDiv({ parent : informationDiv });
     })();

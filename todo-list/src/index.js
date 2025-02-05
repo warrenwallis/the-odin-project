@@ -7,8 +7,16 @@ console.log('working');
 
 const App = (() => {
     const { defaultLists } = information;
-
+    let [ showListIdx, setShowListIdx ] = [ 0, (listIdx) => showListIdx = listIdx ];
     const body = document.body;
-    const menu = Menu({ parent: body });
-    const list = List({ parent: body, list: defaultLists[0] });
+
+    const render = () => {
+        body.innerHTML = '';
+        const menu = Menu({ parent: body, showListIdx, setShowListIdx, render });
+        const list = List({ parent: body, list: defaultLists[showListIdx] });
+    }
+
+    const constructor = (() => {
+        render();
+    })();
 })();
