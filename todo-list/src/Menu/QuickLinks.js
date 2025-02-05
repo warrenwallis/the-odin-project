@@ -13,7 +13,7 @@ const QuickLinks = (props) => {
 
         container.textContent = 'Quick Links';
         for (let link of quickLinks) {
-            Tab({ parent : container, title : link, styles: 'height: 30px' });
+            Tab({ parent : container, title : link, addDescription: false, styles: 'height: 30px' });
         }
     })();
 } 

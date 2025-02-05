@@ -12,7 +12,7 @@ const Header = (props) => {
         const star = Star({ parent: container, starred, green: true, styles: 'width: 30px'});
         parent.append(container);
 
-        container.setAttribute('style', 'display: flex; align-items: center; width: 100%; color: var(--pakistan-green); margin-left: 50px');
+        container.setAttribute('style', 'display: flex; align-items: center; width: 100%');
         titleSpan.setAttribute('style', 'font-size: 48px; font-weight: bold; width: 50%');
 
         titleSpan.textContent = title;

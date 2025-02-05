@@ -13,7 +13,7 @@ const AllLists = (props) => {
 
         container.textContent = 'All Lists';
         for (const { title } of defaultLists) {
-            Tab({ parent: container, title: title, star: true, starred: true, styles: 'height: 60px' });
+            Tab({ parent: container, title: title, addDescription: false, star: true, starred: true, styles: 'height: 60px' });
         }
 
     })()
