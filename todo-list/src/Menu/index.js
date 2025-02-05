@@ -4,7 +4,7 @@ import QuickLinks from "./QuickLinks";
 import SearchBar from "../components/SearchBar";
 
 const Menu = (props) => {
-    const { parent } = props;
+    const { parent, showListIdx, setShowListIdx, render } = props;
 
     const constructor = (() => {
         const menu = document.createElement('div');
@@ -12,7 +12,7 @@ const Menu = (props) => {
         menu.append(appTitle);
         const searchBar = SearchBar({ parent: menu });
         const quickLinks = QuickLinks({ parent: menu });
-        const allLists = AllLists({ parent: menu });
+        const allLists = AllLists({ parent: menu, showListIdx, setShowListIdx, render });
         const footer = Footer({ parent: menu });
         parent.append(menu);
 
