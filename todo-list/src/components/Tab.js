@@ -4,7 +4,7 @@ import noteImg from '../assets/note.png';
 import dateImg from '../assets/calendar.png';
 
 const Tab = (props) => {
-    const { parent, check, checked, title, star, starred, addDescription, description, date, note, styles } = props;
+    const { parent, index, check, checked, updateCheck, title, star, starred, addDescription, description, date, note, styles } = props;
 
     const InformationDiv = (props) => {
         const { parent } = props;
@@ -65,7 +65,7 @@ const Tab = (props) => {
     const constructor = (() => {
         const container = document.createElement('div');
         if (check) {
-            Check({ parent: container, checked })
+            Check({ parent: container, index, checked, updateCheck })
         }
         const informationDiv = document.createElement('div');
         container.append(informationDiv);
