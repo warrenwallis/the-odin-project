@@ -8,7 +8,7 @@ const Star = (props) => {
     let [ starStyle, setStarStyle ] = [ starred, (s) => starStyle = s ];
     const img = document.createElement('img');
     
-    const update = () => {
+    const render = () => {
         if (starStyle) {
             img.src = green ? greenCheckedStar : checkedStar;
         } else {
@@ -24,11 +24,11 @@ const Star = (props) => {
         button.setAttribute('style', 'display: flex; align-items: center; object-fit: cover; border: 0; background-color: transparent; padding: 0; margin-left: 5px');
         button.addEventListener('click', () => {
             setStarStyle(!starStyle);
-            update();
+            render();
         });
         img.setAttribute('style', `width: 20px; ${styles}`);
 
-        update();
+        render();
     })();
 }
 
