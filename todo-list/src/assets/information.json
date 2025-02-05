@@ -5,15 +5,127 @@
 			"title": "Personal",
             "starred": true,
 			"tasks": [
-					{
-						"title": "Get Groceries",
-						"starred": false,
-						"completed": false,
-						"description": "",
-						"date": "",
-						"note": ""
-					}
-				]
+                {
+                    "title": "Get Groceries",
+                    "starred": false,
+                    "completed": true,
+                    "description": "",
+                    "date": "05/02/25",
+                    "note": ""
+                },
+                {
+                    "title": "Finish Project Report",
+                    "starred": true,
+                    "completed": true,
+                    "description": "Complete the final section and proofread.",
+                    "date": "06/02/25",
+                    "note": "Check for formatting issues."
+                },
+                {
+                    "title": "Workout",
+                    "starred": false,
+                    "completed": false,
+                    "description": "Leg day at the gym.",
+                    "date": "05/02/25",
+                    "note": "Don't skip stretching."
+                },
+                {
+                    "title": "Call Mom",
+                    "starred": true,
+                    "completed": false,
+                    "description": "",
+                    "date": "07/02/25",
+                    "note": "Ask about her trip."
+                },
+                {
+                    "title": "Pay Bills",
+                    "starred": false,
+                    "completed": false,
+                    "description": "Electricity and Internet bill.",
+                    "date": "08/02/25",
+                    "note": ""
+                },
+                {
+                    "title": "Read a Book",
+                    "starred": false,
+                    "completed": false,
+                    "description": "Finish reading 'Atomic Habits'.",
+                    "date": "09/02/25",
+                    "note": "Take notes on key ideas."
+                },
+                {
+                    "title": "Respond to Emails",
+                    "starred": false,
+                    "completed": true,
+                    "description": "Reply to work emails from last week.",
+                    "date": "05/02/25",
+                    "note": "Prioritize urgent ones."
+                },
+                {
+                    "title": "Prepare Presentation",
+                    "starred": true,
+                    "completed": false,
+                    "description": "Create slides for the Monday meeting.",
+                    "date": "10/02/25",
+                    "note": "Focus on key insights."
+                },
+                {
+                    "title": "Schedule Doctor Appointment",
+                    "starred": false,
+                    "completed": true,
+                    "description": "Book an annual check-up with Dr. Smith.",
+                    "date": "06/02/25",
+                    "note": "Confirm available slots."
+                },
+                {
+                    "title": "Clean the House",
+                    "starred": false,
+                    "completed": false,
+                    "description": "Deep clean kitchen and living room.",
+                    "date": "11/02/25",
+                    "note": "Vacuum and mop floors."
+                },
+                {
+                    "title": "Plan Weekend Trip",
+                    "starred": true,
+                    "completed": false,
+                    "description": "Decide on location and book a hotel.",
+                    "date": "12/02/25",
+                    "note": "Check weather forecast."
+                },
+                {
+                    "title": "Practice Guitar",
+                    "starred": false,
+                    "completed": false,
+                    "description": "Work on chord transitions and scales.",
+                    "date": "07/02/25",
+                    "note": "Play for at least 30 minutes."
+                },
+                {
+                    "title": "Organize Digital Files",
+                    "starred": false,
+                    "completed": false,
+                    "description": "Sort and back up important documents.",
+                    "date": "08/02/25",
+                    "note": "Delete unnecessary files."
+                },
+                {
+                    "title": "Buy a Birthday Gift",
+                    "starred": true,
+                    "completed": false,
+                    "description": "Find a nice present for Sarah’s birthday.",
+                    "date": "09/02/25",
+                    "note": "Consider something personalized."
+                },
+                {
+                    "title": "Meal Prep for the Week",
+                    "starred": false,
+                    "completed": true,
+                    "description": "Cook and store meals for the week ahead.",
+                    "date": "05/02/25",
+                    "note": "Focus on healthy options."
+                }
+            ]                                
 		},
 		{ "title": "The Odin Project", "starred": false, "tasks": [] },
 		{ "title": "University of California, Los Angeles", "starred": false, "tasks": [] }
