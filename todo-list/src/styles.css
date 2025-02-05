@@ -13,9 +13,16 @@ body {
     background-color: var(--cornsilk);
     padding: 50px 120px;
     margin: 0;
-    height: 100vh;
+    height: 95vh;
 }
 
 input::placeholder {
     color: var(--cornsilk);  /* Change to your desired color */
+}
+
+.slide-in {
+    animation-duration: 3s;
+    animation-name: slide-in;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
 }
