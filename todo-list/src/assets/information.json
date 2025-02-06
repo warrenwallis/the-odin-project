@@ -298,6 +298,152 @@
                     "note": "Update LinkedIn and résumé."
                 }
             ]            
+		},
+		{
+			"title": "Work",
+			"starred": true,
+			"tasks": [
+				{
+					"title": "Complete Budget Report",
+					"starred": true,
+					"completed": false,
+					"description": "Finalize the budget report for Q1.",
+					"date": "06/02/25",
+					"note": "Review expenses carefully."
+				},
+				{
+					"title": "Team Meeting",
+					"starred": false,
+					"completed": true,
+					"description": "Weekly sync-up with the development team.",
+					"date": "05/02/25",
+					"note": "Prepare agenda."
+				},
+				{
+					"title": "Client Follow-up",
+					"starred": true,
+					"completed": false,
+					"description": "Check in with clients on pending proposals.",
+					"date": "07/02/25",
+					"note": "Prioritize high-value clients."
+				},
+				{
+					"title": "Update Project Timeline",
+					"starred": false,
+					"completed": false,
+					"description": "Adjust deadlines based on progress updates.",
+					"date": "08/02/25",
+					"note": "Consult with team leads."
+				},
+				{
+					"title": "Submit Expense Reports",
+					"starred": false,
+					"completed": true,
+					"description": "Upload receipts and submit for approval.",
+					"date": "06/02/25",
+					"note": "Verify receipts before submission."
+				},
+				{
+					"title": "Draft Presentation",
+					"starred": true,
+					"completed": false,
+					"description": "Prepare slides for the upcoming stakeholder meeting.",
+					"date": "09/02/25",
+					"note": "Keep slides concise and impactful."
+				}
+			]
+		},
+		{
+			"title": "Health & Fitness",
+			"starred": false,
+			"tasks": [
+				{
+					"title": "Morning Yoga",
+					"starred": false,
+					"completed": true,
+					"description": "30-minute stretching and meditation session.",
+					"date": "05/02/25",
+					"note": "Try a new pose."
+				},
+				{
+					"title": "Evening Run",
+					"starred": false,
+					"completed": false,
+					"description": "5 km run at the park.",
+					"date": "06/02/25",
+					"note": "Maintain steady pace."
+				},
+				{
+					"title": "Drink More Water",
+					"starred": false,
+					"completed": true,
+					"description": "Track daily water intake.",
+					"date": "05/02/25",
+					"note": "Aim for 8 glasses."
+				},
+				{
+					"title": "Meal Prep",
+					"starred": true,
+					"completed": false,
+					"description": "Prepare healthy meals for the next three days.",
+					"date": "07/02/25",
+					"note": "Focus on protein-rich meals."
+				},
+				{
+					"title": "Stretching Routine",
+					"starred": false,
+					"completed": false,
+					"description": "Post-workout stretching for recovery.",
+					"date": "08/02/25",
+					"note": "Hold each stretch for 30 seconds."
+				}
+			]
+		},
+		{
+			"title": "Learning & Development",
+			"starred": true,
+			"tasks": [
+				{
+					"title": "Complete JavaScript Course",
+					"starred": true,
+					"completed": false,
+					"description": "Finish the remaining modules on The Odin Project.",
+					"date": "10/02/25",
+					"note": "Take notes on important concepts."
+				},
+				{
+					"title": "Read Tech Articles",
+					"starred": false,
+					"completed": true,
+					"description": "Stay updated with the latest programming trends.",
+					"date": "05/02/25",
+					"note": "Summarize key points."
+				},
+				{
+					"title": "Practice Coding Problems",
+					"starred": true,
+					"completed": false,
+					"description": "Solve at least 3 LeetCode problems.",
+					"date": "06/02/25",
+					"note": "Focus on data structures."
+				},
+				{
+					"title": "Watch TED Talk",
+					"starred": false,
+					"completed": true,
+					"description": "Watch an inspirational talk on productivity.",
+					"date": "07/02/25",
+					"note": "Reflect on key takeaways."
+				},
+				{
+					"title": "Write a Blog Post",
+					"starred": true,
+					"completed": false,
+					"description": "Share insights on web development.",
+					"date": "09/02/25",
+					"note": "Publish on Medium."
+				}
+			]
 		}
 	],
 	"footer": {
