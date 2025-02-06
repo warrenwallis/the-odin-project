@@ -1,5 +1,5 @@
 const SearchBar = (props) => {
-    const { parent, styles, setSearch } = props;
+    const { parent, styles, setSearch=()=>{} } = props;
     let { text, setText } = { text: 'Search', setText: (t) => text = t };
 
     const constructor = (() => {
