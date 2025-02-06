@@ -37,7 +37,7 @@ const Task = (props) => {
         container.append(incomplete, completeTitle, complete);
         parent.append(container);
 
-        container.setAttribute('style', 'display: flex; flex-direction: column; gap: 25px; width: 100%; overflow: scroll');
+        container.setAttribute('style', 'display: flex; flex-direction: column; gap: 25px; width: 100%');
         completeTitle.setAttribute('style', 'font-size: 20px; font-weight: bold');
         incomplete.setAttribute('style', 'display: flex; flex-direction: column; gap: 10px');
         complete.setAttribute('style', 'display: flex; flex-direction: column; gap: 10px;');
