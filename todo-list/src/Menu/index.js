@@ -4,7 +4,7 @@ import QuickLinks from "./QuickLinks";
 import SearchBar from "../components/SearchBar";
 
 const Menu = (props) => {
-    const { parent, showListIdx, setShowListIdx, render } = props;
+    const { parent, setShowListIdx, render } = props;
     let [ searchText, setSearchText ] = [ '', (t) => searchText = t ];
     const allListsDiv = document.createElement('div');
     let allLists;
@@ -12,7 +12,7 @@ const Menu = (props) => {
     const setSearch = (t) => {
         setSearchText(t);
         allLists.remove();
-        allLists = AllLists({ parent: allListsDiv, showListIdx, setShowListIdx, render, searchText });
+        allLists = AllLists({ parent: allListsDiv, setShowListIdx, render, searchText });
     }
 
     const constructor = (() => {
@@ -22,7 +22,7 @@ const Menu = (props) => {
         const searchBar = SearchBar({ parent: menu, setSearch });
         const lists = document.createElement('div');
         const quickLinks = QuickLinks({ parent: lists });
-        allLists = AllLists({ parent: allListsDiv, showListIdx, setShowListIdx, render, searchText });
+        allLists = AllLists({ parent: allListsDiv, setShowListIdx, render, searchText });
         lists.append(allListsDiv);
         menu.append(lists);
         const footer = Footer({ parent: menu });
