@@ -50,3 +50,30 @@ export const setListIdx = (idx) => {
 
     storage.setItem(LIST_IDX, idx);
 }
+
+export const addTask = ({ title, description='', date='', note='', checked=false, starred=false }) => {
+    const list = getList();
+
+    list.tasks.push(
+        {
+            title,
+            starred,
+            "completed": checked,
+            description,
+            date,
+            note
+        }
+    )
+
+    const lists = getAllLists();
+    const idx = getListIdx();
+
+    lists[idx] = list;
+    setLists(lists);
+}
+
+export const getTasks = () => {
+    const { tasks } = getList();
+
+    return tasks;
+}

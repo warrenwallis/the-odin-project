@@ -5,22 +5,28 @@ import Task from "./Task";
 
 const List = (props) => {
     const { parent } = props;
-    const { title, tasks } = getList();
+    const { title } = getList();
     let [ searchText, setSearchText ] = [ '', (t) => searchText = t ];
     const container = document.createElement('div');
     const taskDiv = document.createElement('div');
 
     const setSearch = (t) => {
         setSearchText(t);
-        taskDiv.innerHTML = ''
+        renderTask()
+    }
+
+    const renderTask = () => {
+        const { tasks } = getList();
+        console.log(tasks);
+        taskDiv.innerHTML = '';
         Task({ parent: taskDiv, tasks, searchText });
     }
 
     const constructor = (() => {
         const header = Header({ parent: container, title, setSearch });
         container.append(taskDiv);
-        Task({ parent: taskDiv, tasks, searchText });
-        AddTask({ parent: container });
+        renderTask()
+        AddTask({ parent: container, renderTask });
         parent.append(container);
 
         container.setAttribute('style', 'display: flex; flex-direction: column; gap: 50px; width: 100%; height: 100%; margin-left: 50px; color: var(--pakistan-green)');
