@@ -2,6 +2,7 @@ import List from './List';
 import Menu from './Menu';
 import './styles.css'
 import information from './assets/information.json'
+import * as storageService from './services/storage';
 
 console.log('working');
 
@@ -12,11 +13,14 @@ const App = (() => {
 
     const render = () => {
         body.innerHTML = '';
-        const menu = Menu({ parent: body, showListIdx, setShowListIdx, render });
-        const list = List({ parent: body, list: defaultLists[showListIdx] });
+        const menu = Menu({ parent: body, setShowListIdx, render });
+        const list = List({ parent: body });
     }
 
     const constructor = (() => {
+        storageService.setLists(defaultLists);
+        storageService.setListIdx(0);   
+
         render();
     })();
 })();

@@ -1,10 +1,11 @@
+import { getList } from "../services/storage";
 import AddTask from "./AddTask";
 import Header from "./Header";
 import Task from "./Task";
 
 const List = (props) => {
-    const { parent, list } = props;
-    const { title, starred, tasks } = list;
+    const { parent } = props;
+    const { title, tasks } = getList();
     let [ searchText, setSearchText ] = [ '', (t) => searchText = t ];
     const container = document.createElement('div');
     const taskDiv = document.createElement('div');
