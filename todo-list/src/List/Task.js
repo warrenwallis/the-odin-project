@@ -3,6 +3,7 @@ import Tab from "../components/Tab";
 const Task = (props) => {
     const { parent, tasks, searchText } = props;
     let [ taskList, setTaskList ] = [ [], (l) => taskList = l ];
+    // const tasks = 
     const incomplete = document.createElement('div');
     const complete = document.createElement('div');
     const container = document.createElement('div');

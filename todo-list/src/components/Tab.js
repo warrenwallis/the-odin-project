@@ -4,7 +4,7 @@ import noteImg from '../assets/note.png';
 import dateImg from '../assets/calendar.png';
 
 const Tab = (props) => {
-    const { parent, index, check, checked, updateCheck, title, star, starred, addDescription, description, date, note, styles, idx, showListIdx, setListIdx=()=>{}, render=()=>{} } = props;
+    const { parent, index, check, checked, updateCheck, title, star, starred, addDescription, description, date, note, styles, idx, setListIdx=()=>{}, render=()=>{} } = props;
 
     const InformationDiv = (props) => {
         const { parent } = props;
