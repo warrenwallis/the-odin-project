@@ -17,7 +17,6 @@ const List = (props) => {
 
     const renderTask = () => {
         const { tasks } = getList();
-        console.log(tasks);
         taskDiv.innerHTML = '';
         Task({ parent: taskDiv, tasks, searchText });
     }
