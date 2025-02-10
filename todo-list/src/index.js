@@ -18,8 +18,7 @@ const App = (() => {
     }
 
     const constructor = (() => {
-        storageService.setLists(defaultLists);
-        storageService.setListIdx(0);   
+        storageService.checkStorage(defaultLists);
 
         render();
     })();

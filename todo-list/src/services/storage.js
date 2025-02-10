@@ -3,7 +3,7 @@ import information from '../assets/information.json';
 const ALL_LISTS = 'allLists';
 const LIST_IDX = 'listIdx';
 
-export const checkStorage = () => {
+export const checkStorage = (lists) => {
     () => {
         try {
             console.log('Trying to use localstorage');
@@ -12,6 +12,13 @@ export const checkStorage = () => {
             storage.setItem(x, x);
             storage.removeItem(x);
             console.log('Can use localstorage');
+
+            if (storage.getItem(ALL_LISTS) !== null) {
+                console.log('Lists already in localStorage');
+            } else {
+                storage.setLists(lists);
+                storage.setListIdx(0);
+            }
             return true;
         } catch (e) {
             console.log('Cannot use localstorage', 'Using test data instead');
@@ -30,6 +37,18 @@ export const getAllLists = () => {
     const storage = window.localStorage;
 
     return JSON.parse(storage.getItem(ALL_LISTS));
+}
+
+export const addList = ({ title, starred=false, tasks=Array() }) => {
+    const lists = getAllLists();
+
+    lists.push({
+        title,
+        starred,
+        tasks
+    });
+    setLists(lists);
+    console.log(getAllLists());
 }
 
 export const getList = () => {

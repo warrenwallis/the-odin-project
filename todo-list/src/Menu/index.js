@@ -2,6 +2,7 @@ import AllLists from "./AllLists";
 import Footer from "./Footer";
 import QuickLinks from "./QuickLinks";
 import SearchBar from "../components/SearchBar";
+import AddList from "./AddList";
 
 const Menu = (props) => {
     const { parent, setShowListIdx, render } = props;
@@ -21,10 +22,11 @@ const Menu = (props) => {
         menu.append(appTitle);
         const searchBar = SearchBar({ parent: menu, setSearch });
         const lists = document.createElement('div');
-        const quickLinks = QuickLinks({ parent: lists });
+        // const quickLinks = QuickLinks({ parent: lists });
         allLists = AllLists({ parent: allListsDiv, setShowListIdx, render, searchText });
         lists.append(allListsDiv);
         menu.append(lists);
+        const addList = AddList({ parent: menu, renderLists: render });
         const footer = Footer({ parent: menu });
         parent.append(menu);
 
