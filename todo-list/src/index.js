@@ -16,7 +16,7 @@ const App = (() => {
     
     const render = () => {
         content.innerHTML = '';
-        const modal = Modal({ parent: modalDiv });
+        // const modal = Modal({ parent: modalDiv });
         const menu = Menu({ parent: content, setShowListIdx, render });
         const list = List({ parent: content });
     }
