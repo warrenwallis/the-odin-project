@@ -4,32 +4,31 @@ const ALL_LISTS = 'allLists';
 const LIST_IDX = 'listIdx';
 
 export const checkStorage = (lists) => {
-    () => {
-        try {
-            console.log('Trying to use localstorage');
-            const storage = window.localStorage;
-            const x = "__storage_test__";
-            storage.setItem(x, x);
-            storage.removeItem(x);
-            console.log('Can use localstorage');
-
-            if (storage.getItem(ALL_LISTS) !== null) {
-                console.log('Lists already in localStorage');
-            } else {
-                storage.setLists(lists);
-                storage.setListIdx(0);
-            }
-            return true;
-        } catch (e) {
-            console.log('Cannot use localstorage', 'Using test data instead');
-            return false;
+    try {
+        console.log('Trying to use localstorage');
+        const storage = window.localStorage;
+        const x = "__storage_test__";
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        console.log('Can use localstorage');
+        
+        if (storage.getItem(ALL_LISTS) !== null) {
+            console.log('Lists already in localStorage');
+        } else {
+            setLists(lists);
+            setListIdx(0);
         }
+
+        return true;
+    } catch (e) {
+        console.log('Cannot use localstorage', 'Using test data instead');
+        return false;
     }
 }
 
 export const setLists = (lists) => {
     const storage = window.localStorage;
-
+    
     storage.setItem(ALL_LISTS, JSON.stringify(lists));
 }
 
@@ -56,6 +55,10 @@ export const getList = () => {
     const idx = getListIdx();
 
     return lists[idx];
+}
+
+export const setList = () => {
+    
 }
 
 export const getListIdx = () => {
@@ -88,6 +91,22 @@ export const addTask = ({ title, description='', date='', note='', checked=false
     const idx = getListIdx();
 
     lists[idx] = list;
+    setLists(lists);
+}
+
+export const setTask = ({ index, title, starred, completed, description, date, note }) => {
+    const lists = getAllLists();
+    const idx = getListIdx();
+
+    lists[idx].tasks[index] = {
+        title,
+        starred,
+        completed,
+        description,
+        date,
+        note
+    }
+
     setLists(lists);
 }
 
