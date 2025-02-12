@@ -1,7 +1,7 @@
 import Star from "../components/Star";
 import calendar from '../assets/calendar.png';
 import noteSrc from '../assets/note.png';
-import { setTask } from "../services/storage";
+import { deleteTask, setTask } from "../services/storage";
 
 const Modal = (props) => {
     const { parent, title, starred, completed, description, date, note, index, renderTask } = props;
@@ -74,6 +74,13 @@ const Modal = (props) => {
             renderTask();
         })
         deleteButton.setAttribute('style', 'width: 50%; height: 30px; border-radius: 5px; background: var(--earth-yellow); border: 0;  color: var(--cornsilk); font-size: 16px');
+        deleteButton.addEventListener('click', () => {
+            deleteTask(index);
+            const modal = document.getElementById('modal');
+            modal.innerHTML = '';
+            modal.style.display= 'none';
+            renderTask();
+        });
 
         title.placeholder = 'Title';
         title.value = titleText;
