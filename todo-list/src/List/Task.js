@@ -1,4 +1,5 @@
 import Tab from "../components/Tab";
+import Modal from "../Modal";
 
 const Task = (props) => {
     const { parent, tasks, searchText } = props;
@@ -25,10 +26,18 @@ const Task = (props) => {
         complete.innerHTML = '';
         for (const [ index, { title, starred, completed, description, date, note } ] of taskList.entries()) {
             if (searchText === '') {
-                Tab({ parent: (() => completed ? complete : incomplete)(), index, check: true, checked: completed, updateCheck: (index, value) => updateCheck(index, value), title, star: true, starred, addDescription: true, description, date, note, styles: 'font-size: 24px; font-weight: var(--medium); height: 75px'});
+                Tab({ parent: (() => completed ? complete : incomplete)(), index, check: true, checked: completed, updateCheck: (index, value) => updateCheck(index, value), title, star: true, starred, addDescription: true, description, date, note, modal: () => {
+                    const modalDiv = document.getElementById('modal');
+                    const modal = Modal({ parent: modalDiv })
+                    modalDiv.style.display = 'flex';
+                }, styles: 'font-size: 24px; font-weight: var(--medium); height: 75px'});
             }
             else if (title.toLowerCase().includes(searchText) || description.toLowerCase().includes(searchText)) {
-                Tab({ parent: (() => completed ? complete : incomplete)(), index, check: true, checked: completed, updateCheck: (index, value) => updateCheck(index, value), title, star: true, starred, addDescription: true, description, date, note, styles: 'font-size: 24px; font-weight: var(--medium); height: 75px'});
+                Tab({ parent: (() => completed ? complete : incomplete)(), index, check: true, checked: completed, updateCheck: (index, value) => updateCheck(index, value), title, star: true, starred, addDescription: true, description, date, note, modal: () => {
+                    const modalDiv = document.getElementById('modal');
+                    const modal = Modal({ parent: modalDiv })
+                    modalDiv.style.display = 'flex';
+                }, styles: 'font-size: 24px; font-weight: var(--medium); height: 75px'});
             }
         }
     }

@@ -23,7 +23,7 @@ body {
 }
 
 #modal {
-    display: flex;
+    display: none;
     position: absolute;
 	width: 100%;
 	height: 100%;
@@ -32,10 +32,12 @@ body {
 
 input::placeholder {
 	color: var(--cornsilk); /* Change to your desired color */
+    opacity: 75%;
 }
 
 textarea::placeholder {
-	color: var(--cornsilk); /* Change to your desired color */
+    color: var(--cornsilk); /* Change to your desired color */
+    opacity: 75%;
 }
 
 .slide-in {
