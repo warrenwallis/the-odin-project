@@ -13,6 +13,7 @@ const App = (() => {
     let [ showModal, setShowModal ] = [ false, (m) => showModal = m ];
     const content = document.getElementById('content');
     const modalDiv = document.getElementById('modal');
+    storageService.checkStorage(defaultLists);
     
     const render = () => {
         content.innerHTML = '';
@@ -22,7 +23,6 @@ const App = (() => {
     }
 
     const constructor = (() => {
-        storageService.checkStorage(defaultLists);
 
         render();
     })();

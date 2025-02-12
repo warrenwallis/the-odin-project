@@ -4,7 +4,7 @@ import greenCheckedStar from '../assets/green-checked-star.png';
 import greenUncheckedStar from '../assets/green-unchecked-star.png';
 
 const Star = (props) => {
-    const { parent, starred, green, styles } = props;
+    const { parent, starred, green, styles, setStarCheck=()=>{} } = props;
     let [ starStyle, setStarStyle ] = [ starred, (s) => starStyle = s ];
     const img = document.createElement('img');
     
@@ -24,6 +24,7 @@ const Star = (props) => {
         button.setAttribute('style', 'display: flex; align-items: center; object-fit: cover; border: 0; background-color: transparent; padding: 0; margin-left: 5px');
         button.addEventListener('click', () => {
             setStarStyle(!starStyle);
+            setStarCheck(starStyle);
             render();
         });
         img.setAttribute('style', `width: 20px; ${styles}`);
