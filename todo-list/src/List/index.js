@@ -4,8 +4,8 @@ import Header from "./Header";
 import Task from "./Task";
 
 const List = (props) => {
-    const { parent } = props;
-    const { title } = getList();
+    const { parent, render } = props;
+    const { title, starred } = getList();
     let [ searchText, setSearchText ] = [ '', (t) => searchText = t ];
     const container = document.createElement('div');
     const taskDiv = document.createElement('div');
@@ -22,7 +22,7 @@ const List = (props) => {
     }
 
     const constructor = (() => {
-        const header = Header({ parent: container, title, setSearch });
+        const header = Header({ parent: container, title, setSearch, starred, render });
         container.append(taskDiv);
         renderTask()
         AddTask({ parent: container, renderTask });

@@ -4,7 +4,7 @@ import noteImg from '../assets/note.png';
 import dateImg from '../assets/calendar.png';
 
 const Tab = (props) => {
-    const { parent, index, check, checked, updateCheck, title, star, starred, addDescription, description, date, note, styles, idx, setListIdx=()=>{}, render=()=>{}, modal=()=>{} } = props;
+    const { parent, index, check, checked, updateCheck, title, star, starred, addDescription, description, date, note, styles, idx, setListIdx=()=>{}, render=()=>{}, modal=()=>{}, setStarCheck=()=>{} } = props;
 
     const InformationDiv = (props) => {
         const { parent } = props;
@@ -70,7 +70,7 @@ const Tab = (props) => {
         const informationDiv = document.createElement('div');
         container.append(informationDiv);
         if (star) {
-            Star({ parent: container, starred });
+            Star({ parent: container, starred, setStarCheck });
         }
         parent.append(container);
 

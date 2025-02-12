@@ -57,8 +57,13 @@ export const getList = () => {
     return lists[idx];
 }
 
-export const setList = () => {
-    
+export const setList = ({ star }) => {
+    const lists = getAllLists();
+    const idx = getListIdx();
+
+    lists[idx].starred = star;
+
+    setLists(lists);
 }
 
 export const getListIdx = () => {
@@ -106,6 +111,15 @@ export const setTask = ({ index, title, starred, completed, description, date, n
         date,
         note
     }
+
+    setLists(lists);
+}
+
+export const deleteTask = (index) => {
+    const lists = getAllLists();
+    const idx = getListIdx();
+
+    lists[idx].tasks.splice(index, 1);
 
     setLists(lists);
 }

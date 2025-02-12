@@ -19,7 +19,7 @@ const App = (() => {
         content.innerHTML = '';
         // const modal = Modal({ parent: modalDiv });
         const menu = Menu({ parent: content, setShowListIdx, render });
-        const list = List({ parent: content });
+        const list = List({ parent: content, render });
     }
 
     const constructor = (() => {
