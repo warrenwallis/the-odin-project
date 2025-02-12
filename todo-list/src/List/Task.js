@@ -2,7 +2,7 @@ import Tab from "../components/Tab";
 import Modal from "../Modal";
 
 const Task = (props) => {
-    const { parent, tasks, searchText } = props;
+    const { parent, tasks, searchText, renderTask } = props;
     let [ taskList, setTaskList ] = [ [], (l) => taskList = l ];
     // const tasks = 
     const incomplete = document.createElement('div');
@@ -19,23 +19,20 @@ const Task = (props) => {
     }
 
     const render = () => {
-        // for (const { title, starred, completed, description, date, note } of taskList) {
-        //     Tab({ parent: (() => completed ? complete : incomplete)(), check: true, checked: completed, title, star: true, starred, addDescription: true, description, date, note, styles: 'font-size: 24px; font-weight: var(--medium); height: 75px' });
-        // }
         incomplete.innerHTML = '';
         complete.innerHTML = '';
         for (const [ index, { title, starred, completed, description, date, note } ] of taskList.entries()) {
             if (searchText === '') {
                 Tab({ parent: (() => completed ? complete : incomplete)(), index, check: true, checked: completed, updateCheck: (index, value) => updateCheck(index, value), title, star: true, starred, addDescription: true, description, date, note, modal: () => {
                     const modalDiv = document.getElementById('modal');
-                    const modal = Modal({ parent: modalDiv })
+                    const modal = Modal({ parent: modalDiv, title, starred, completed, description, date, note, index, renderTask });
                     modalDiv.style.display = 'flex';
                 }, styles: 'font-size: 24px; font-weight: var(--medium); height: 75px'});
             }
             else if (title.toLowerCase().includes(searchText) || description.toLowerCase().includes(searchText)) {
                 Tab({ parent: (() => completed ? complete : incomplete)(), index, check: true, checked: completed, updateCheck: (index, value) => updateCheck(index, value), title, star: true, starred, addDescription: true, description, date, note, modal: () => {
                     const modalDiv = document.getElementById('modal');
-                    const modal = Modal({ parent: modalDiv })
+                    const modal = Modal({ parent: modalDiv, title, starred, completed, description, date, note, index, renderTask });
                     modalDiv.style.display = 'flex';
                 }, styles: 'font-size: 24px; font-weight: var(--medium); height: 75px'});
             }

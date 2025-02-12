@@ -18,7 +18,7 @@ const List = (props) => {
     const renderTask = () => {
         const { tasks } = getList();
         taskDiv.innerHTML = '';
-        Task({ parent: taskDiv, tasks, searchText });
+        Task({ parent: taskDiv, tasks, searchText, renderTask });
     }
 
     const constructor = (() => {
