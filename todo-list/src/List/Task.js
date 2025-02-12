@@ -1,5 +1,6 @@
 import Tab from "../components/Tab";
 import Modal from "../Modal";
+import { setTask } from "../services/storage";
 
 const Task = (props) => {
     const { parent, tasks, searchText, renderTask } = props;
@@ -27,6 +28,9 @@ const Task = (props) => {
                     const modalDiv = document.getElementById('modal');
                     const modal = Modal({ parent: modalDiv, title, starred, completed, description, date, note, index, renderTask });
                     modalDiv.style.display = 'flex';
+                }, setStarCheck: (star) => {
+                    setTask({ index, title, star, completed, description, date, note });
+                    renderTask();
                 }, styles: 'font-size: 24px; font-weight: var(--medium); height: 75px'});
             }
             else if (title.toLowerCase().includes(searchText) || description.toLowerCase().includes(searchText)) {
@@ -34,6 +38,9 @@ const Task = (props) => {
                     const modalDiv = document.getElementById('modal');
                     const modal = Modal({ parent: modalDiv, title, starred, completed, description, date, note, index, renderTask });
                     modalDiv.style.display = 'flex';
+                }, setStarCheck: (star) => {
+                    setTask({ index, title, star, completed, description, date, note });
+                    renderTask();
                 }, styles: 'font-size: 24px; font-weight: var(--medium); height: 75px'});
             }
         }

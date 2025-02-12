@@ -1,15 +1,21 @@
 import SearchBar from "../components/SearchBar";
 import Star from "../components/Star";
+import { setList } from "../services/storage";
 
 const Header = (props) => {
-    const { parent, title, starred, setSearch } = props;
+    const { parent, title, starred, setSearch, render } = props;
     const container = document.createElement('div');
+
+    const setStarCheck = (star) => {
+        setList({ star });
+        render();
+    }
 
     const constructor = (() => {
         const titleSpan = document.createElement('span');
         const interactives = document.createElement('div');
         const search = SearchBar({ parent: interactives, setSearch, styles: 'margin-right: 10px' });
-        const star = Star({ parent: interactives, starred, green: true, styles: 'width: 30px'});
+        const star = Star({ parent: interactives, starred, green: true, styles: 'width: 30px', setStarCheck});
         container.append(titleSpan);
         container.append(interactives);
         parent.append(container);
