@@ -1,3 +1,53 @@
+:root {
+	--primary-color: #007ba5;
+}
+
 body {
-    background-color: rebeccapurple;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	background: black;
+}
+
+#picture-frame {
+	overflow-x: hidden;
+	width: 300px;
+	/* border: 2px solid white; */
+	box-sizing: border-box;
+}
+
+#slides {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+	width: 300px;
+}
+
+.index-button {
+	background: white;
+	width: 15px;
+	height: 15px;
+	border: 0;
+	border-radius: 10px;
+	margin: 10px 2px;
+}
+
+#carousel {
+	display: flex;
+	align-items: center;
+}
+
+.carousel-button {
+	margin: 0px 5px;
+	padding: 5px 10px;
+	border: 0;
+	background: white;
+	border-radius: 5px;
+	color: var(--primary-color);
+	font-weight: bold;
 }
