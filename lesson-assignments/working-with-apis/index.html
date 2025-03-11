@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+	</head>
+	<body
+		style="
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		"
+	>
+		<form>
+			<input style="width: 400px; padding: 10px 25px; margin-bottom: 10px" />
+			<button style="padding: 10px 25px; margin-top: 10px">NEW IMAGE</button>
+		</form>
+		<img src="#" />
+		<script>
+			const img = document.querySelector("img");
+			const getGif = (query = "cats") => {
+				console.log("fetching");
+				fetch(
+					`https://api.giphy.com/v1/gifs/translate?api_key=H5OGThT1nbBs0rxOfV7BFSweBAJPm6XV&s=${query}`,
+					{ mode: "cors" }
+				)
+					.then(function (response) {
+						return response.json();
+					})
+					.then(function (response) {
+						console.log("setting");
+						img.src = response.data.images.original.url;
+					});
+			};
+
+			getGif();
+
+			const form = document.querySelector("form");
+			form.addEventListener("submit", (e) => {
+				e.preventDefault();
+				getGif(e.target[0].value);
+			});
+		</script>
+	</body>
+</html>
