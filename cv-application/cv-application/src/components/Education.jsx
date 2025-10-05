@@ -1,30 +1,21 @@
-import { useState } from "react";
-import logo from "../assets/generalInformation.png"
+import logo from "../assets/education.png"
 
-function GeneralInformation() {
-	const [data, setData] = useState({
-		firstName: "",
-		lastName: "",
-		email: "",
-		phoneNumber: ""
-	});
-
+function Education() {
 	return (
 		<div className="flex flex-col items-center py-10 border border-red-500 text-gray-900">
 			<div className="w-full text-2xl font-medium mb-10">
-				General Information
+				Education
 			</div>
 			<div className="flex w-full">
-				<div className="flex flex-col w-3/5">
-					<div className="flex justify-between">
-						<Input title={"First Name"} name="firstName" />
-						<Input title={"Last Name"} />
-					</div>
-					<Input title={"Email"} size={"full"}/>
-					<Input title={"Phone Number"} />
+				<div className="flex justify-center flex-1 mx-15">
+					<img src={logo} className="object-contain"/>
 				</div>
-				<div className="flex justify-center flex-1">
-					<img src={logo} />
+				<div className="flex flex-col w-3/5">
+					<Input title={"School Name"} size={"full"}/>
+					<div className="flex justify-between">
+						<Input title={"Major"} />
+						<Input title={"Graduation Year"} />
+					</div>
 				</div>
 			</div>
 		</div>
@@ -40,4 +31,4 @@ function Input({ title = null, size = "47/100" }) {
 	);
 }
 
-export default GeneralInformation;
+export default Education;
