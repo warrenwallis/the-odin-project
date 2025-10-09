@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import GeneralInformation from "./components/GeneralInformation";
 import Education from "./components/Education";
+import JobExperience from "./components/JobExperience";
 
 function App() {
 	return (
@@ -9,6 +10,7 @@ function App() {
 				<Header />
 				<GeneralInformation />
 				<Education />
+				<JobExperience />
 			</form>
 		</div>
 	);
