@@ -1,13 +1,20 @@
 import { useState } from "react";
-import logo from "../assets/generalInformation.png"
+import logo from "../assets/generalInformation.png";
+import Input from "./Input";
 
 function GeneralInformation() {
 	const [data, setData] = useState({
 		firstName: "",
 		lastName: "",
 		email: "",
-		phoneNumber: ""
+		phoneNumber: "",
 	});
+
+	const handleChange = (e) => {
+		setData((prev) => {
+			return { ...prev, [e.target.name]: e.target.value };
+		});
+	};
 
 	return (
 		<div className="flex flex-col items-center py-10 border border-red-500 text-gray-900">
@@ -16,26 +23,43 @@ function GeneralInformation() {
 			</div>
 			<div className="flex w-full">
 				<div className="flex flex-col w-3/5">
-					<div className="flex justify-between">
-						<Input title={"First Name"} name="firstName" />
-						<Input title={"Last Name"} />
+					<div className="flex gap-8">
+						<Input
+							title={"First Name"}
+							styling={"flex-1"}
+							name="firstName"
+							value={data["firstName"]}
+							onChange={handleChange}
+						/>
+						<Input
+							title={"Last Name"}
+							styling={"flex-1"}
+							name="lastName"
+							value={data["lastName"]}
+							onChange={handleChange}
+						/>
 					</div>
-					<Input title={"Email"} size={"full"}/>
-					<Input title={"Phone Number"} />
+					<Input
+						title={"Email"}
+						name="email"
+						value={data["email"]}
+						onChange={handleChange}
+					/>
+					<div className="flex gap-8">
+						<Input
+							title={"Phone Number"}
+							styling={"flex-1"}
+							name="phoneNumber"
+							value={data["phoneNumber"]}
+							onChange={handleChange}
+						/>
+						<Input title={"Spacer"} styling={"invisible flex-1"} />
+					</div>
 				</div>
 				<div className="flex justify-center flex-1">
 					<img src={logo} />
 				</div>
 			</div>
-		</div>
-	);
-}
-
-function Input({ title = null, size = "47/100" }) {
-	return (
-		<div className={`flex flex-col my-2 text-lg font-medium w-${size}`}>
-			{title}
-			<input className="p-2 mt-1 rounded-xl bg-gray-900 text-gray-100 focus:outline-none border-3 border-transparent focus:border-gray-400" />
 		</div>
 	);
 }

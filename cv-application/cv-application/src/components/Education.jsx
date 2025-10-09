@@ -1,32 +1,97 @@
-import logo from "../assets/education.png"
+import { useState } from "react";
+import logo from "../assets/education.png";
+import Input from "./Input";
+import AddButton from "./AddButton";
 
 function Education() {
+	const [data, setData] = useState([
+		{
+			schoolName: "",
+			major: "",
+			graduationYear: "",
+		},
+	]);
+
+	const handleChange = (e, id) => {
+		setData((datas) =>
+			datas.map((data, dataId) => {
+				if (dataId === id) {
+					return { ...data, [e.target.name]: e.target.value };
+				} else {
+					return data;
+				}
+			})
+		);
+	};
+
+	const addEducation = (e) => {
+		e.preventDefault();
+		setData((prev) => [
+			...prev,
+			{
+				schoolName: "",
+				major: "",
+				graduationYear: "",
+			},
+		]);
+	};
+
+	const deleteEducation = (e, id) => {
+		e.preventDefault();
+		setData((data) => [...data.slice(0, id), ...data.slice(id + 1)]);
+	};
+
+	const educationList = data.map((education, id) => {
+		return (
+			<div key={id} className="mb-8">
+				<Input
+					title={`School Name ${id + 1}`}
+					name="schoolName"
+					value={education["schoolName"]}
+					onChange={(e) => {
+						handleChange(e, id);
+					}}
+					deleteButton={id > 0 ? true : false}
+					deleteOnClick={(e) => {
+						deleteEducation(e, id);
+					}}
+				/>
+				<div className="flex gap-8">
+					<Input
+						title={`Major ${id + 1}`}
+						styling={"flex-1"}
+						name="major"
+						value={education["major"]}
+						onChange={(e) => {
+							handleChange(e, id);
+						}}
+					/>
+					<Input
+						title={"Graduation Year"}
+						styling={"flex-1"}
+						name="graduationYear"
+						value={education["graduationYear"]}
+						onChange={(e) => {
+							handleChange(e, id);
+						}}
+					/>
+				</div>
+			</div>
+		);
+	});
+
 	return (
 		<div className="flex flex-col items-center py-10 border border-red-500 text-gray-900">
-			<div className="w-full text-2xl font-medium mb-10">
-				Education
-			</div>
-			<div className="flex w-full">
-				<div className="flex justify-center flex-1 mx-15">
-					<img src={logo} className="object-contain"/>
-				</div>
+			<div className="w-full text-2xl font-medium mb-10">Education</div>
+			<div className="flex items-center w-full border">
 				<div className="flex flex-col w-3/5">
-					<Input title={"School Name"} size={"full"}/>
-					<div className="flex justify-between">
-						<Input title={"Major"} />
-						<Input title={"Graduation Year"} />
-					</div>
+					{educationList}
+					<AddButton onClick={addEducation} />
+				</div>
+				<div className="flex justify-center flex-1">
+					<img src={logo} />
 				</div>
 			</div>
-		</div>
-	);
-}
-
-function Input({ title = null, size = "47/100" }) {
-	return (
-		<div className={`flex flex-col my-2 text-lg font-medium w-${size}`}>
-			{title}
-			<input className="p-2 mt-1 rounded-xl bg-gray-900 text-gray-100 focus:outline-none border-3 border-transparent focus:border-gray-400" />
 		</div>
 	);
 }
