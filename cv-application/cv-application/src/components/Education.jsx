@@ -1,17 +1,8 @@
-import { useState } from "react";
 import logo from "../assets/education.png";
 import Input from "./Input";
 import AddButton from "./AddButton";
 
-function Education() {
-	const [data, setData] = useState([
-		{
-			schoolName: "",
-			major: "",
-			graduationYear: "",
-		},
-	]);
-
+function Education({ data, setData }) {
 	const handleChange = (e, id) => {
 		setData((datas) =>
 			datas.map((data, dataId) => {
@@ -81,9 +72,9 @@ function Education() {
 	});
 
 	return (
-		<div className="flex flex-col items-center py-10 border border-red-500 text-gray-900">
+		<div className="flex flex-col items-center py-10 text-gray-900">
 			<div className="w-full text-2xl font-medium mb-10">Education</div>
-			<div className="flex items-center w-full border">
+			<div className="flex items-center w-full">
 				<div className="flex flex-col w-3/5">
 					{educationList}
 					<AddButton onClick={addEducation} />

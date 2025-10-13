@@ -1,23 +1,16 @@
-import { useState } from "react";
 import logo from "../assets/generalInformation.png";
 import Input from "./Input";
 
-function GeneralInformation() {
-	const [data, setData] = useState({
-		firstName: "",
-		lastName: "",
-		email: "",
-		phoneNumber: "",
-	});
-
+function GeneralInformation({ data, setData }) {
 	const handleChange = (e) => {
-		setData((prev) => {
-			return { ...prev, [e.target.name]: e.target.value };
-		});
+		setData((prev) => ({
+			...prev,
+			[e.target.name]: e.target.value,
+		}));
 	};
 
 	return (
-		<div className="flex flex-col items-center py-10 border border-red-500 text-gray-900">
+		<div className="flex flex-col items-center py-10 text-gray-900">
 			<div className="w-full text-2xl font-medium mb-10">
 				General Information
 			</div>

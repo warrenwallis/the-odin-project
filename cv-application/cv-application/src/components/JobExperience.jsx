@@ -1,19 +1,8 @@
-import { useState } from "react";
 import logo from "../assets/jobExperience.png";
 import Input from "./Input";
 import AddButton from "./AddButton";
 
-function JobExperience() {
-	const [data, setData] = useState([
-		{
-			companyName: "",
-			positionTitle: "",
-			startDate: "",
-			endDate: "",
-			description: "",
-		},
-	]);
-
+function JobExperience({ data, setData }) {
 	const handleChange = (e, id) => {
 		setData((datas) =>
 			datas.map((data, dataId) => {
@@ -103,9 +92,9 @@ function JobExperience() {
 	});
 
 	return (
-		<div className="flex flex-col items-center py-10 border border-red-500 text-gray-900">
+		<div className="flex flex-col items-center py-10 text-gray-900">
 			<div className="w-full text-2xl font-medium mb-10">Job Experience</div>
-			<div className="flex items-center w-full border">
+			<div className="flex items-center w-full">
 				<div className="flex flex-col w-3/5">
 					{experienceList}
 					<AddButton onClick={addData} />
