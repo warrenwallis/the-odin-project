@@ -1,3 +1,4 @@
+import { EditContext } from "../contexts/ViewContext";
 import DeleteButton from "./DeleteButton";
 
 function Input({
@@ -18,7 +19,7 @@ function Input({
 			</div>
 			{description ? (
 				<textarea
-					className="p-2 mt-1 w-full rounded-xl bg-gray-900 text-gray-100 focus:outline-none border-3 border-transparent focus:border-gray-400"
+					className={`p-2 mt-1 w-full bg-gray-900 text-gray-100 rounded-xl focus:outline-none border-3 border-transparent focus:border-gray-400`}
 					name={name}
 					value={value}
 					onChange={onChange}
@@ -26,7 +27,7 @@ function Input({
 				/>
 			) : (
 				<input
-					className="p-2 mt-1 w-full rounded-xl bg-gray-900 text-gray-100 focus:outline-none border-3 border-transparent focus:border-gray-400"
+					className={`p-2 mt-1 w-full bg-gray-900 text-gray-100 rounded-xl focus:outline-none border-3 border-transparent focus:border-gray-400`}
 					name={name}
 					value={value}
 					onChange={onChange}

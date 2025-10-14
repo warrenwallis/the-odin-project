@@ -62,7 +62,7 @@ function JobExperience({ data, setData }) {
 						title={`Start Date ${id + 1}`}
 						styling={"flex-1"}
 						name="startDate"
-						value={experience["endDate"]}
+						value={experience["startDate"]}
 						onChange={(e) => {
 							handleChange(e, id);
 						}}

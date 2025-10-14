@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import logo from "../assets/generalInformation.png";
 import Input from "./Input";
+import { EditContext } from "../contexts/ViewContext";
 
 function GeneralInformation({ data, setData }) {
+	const { edit } = useContext(EditContext);
+
 	const handleChange = (e) => {
 		setData((prev) => ({
 			...prev,
