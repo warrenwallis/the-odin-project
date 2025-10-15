@@ -75,12 +75,12 @@ function Education({ data, setData }) {
 		<div className="flex flex-col items-center py-10 text-gray-900">
 			<div className="w-full text-2xl font-medium mb-10">Education</div>
 			<div className="flex items-center w-full">
+				<div className="flex justify-center flex-1">
+					<img src={logo} />
+				</div>
 				<div className="flex flex-col w-3/5">
 					{educationList}
 					<AddButton onClick={addEducation} />
-				</div>
-				<div className="flex justify-center flex-1">
-					<img src={logo} />
 				</div>
 			</div>
 		</div>
