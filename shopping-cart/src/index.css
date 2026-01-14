@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+	--background: #f2f7ff;
+	--color-primary: #5400ff;
+	--color-primary-dark: #3a00b7;
+	--color-primary-text: #4b5467;
+}
+
+.icon-primary {
+	color: var(--color-primary);
+}
+
+.text-primary {
+	color: var(--color-primary-text);
+}
+
+.color-primary {
+	color: var(--color-primary);
+}
