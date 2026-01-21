@@ -1,4 +1,6 @@
 import shoppingIllustration from "../assets/hero.jpeg";
+import CallToAction from "./CallToAction";
+import DescriptionCards from "./DescriptionCards";
 
 function Home() {
 	return (
@@ -12,13 +14,15 @@ function Home() {
 				Start Shopping
 				<i className="fa-solid fa-arrow-right ml-2"></i>
 			</button>
-			<div className="mt-10 w-full max-w-6xl overflow-hidden rounded-2xl shadow-lg aspect-5/2">
+			<div className="mt-10 w-full max-w-6xl overflow-hidden rounded-2xl shadow-lg h-96">
 				<img
 					src={shoppingIllustration}
 					alt="Shopping Illustration"
-					className="h-full w-full object-cover"
+					className="h-full w-full object-cover "
 				/>
 			</div>
+			<DescriptionCards />
+			<CallToAction />
 		</div>
 	);
 }

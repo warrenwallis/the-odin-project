@@ -6,7 +6,7 @@ function App() {
 	return (
 		<>
 			<NavigationBar />
-			<div className="w-full h-full px-10 flex justify-center">
+			<div className="w-full h-full px-10 py-20 flex justify-center">
 				<Home />
 			</div>
 		</>
