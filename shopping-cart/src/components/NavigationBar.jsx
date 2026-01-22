@@ -1,4 +1,4 @@
-function NavigationBar({ pageIdx, setPageIdx }) {
+function NavigationBar({ pageIdx, setPageIdx, numItems }) {
 	return (
 		<div className="bg-white px-10 py-5 shadow-xl flex justify-between items-center">
 			<div className="flex-1">
@@ -34,7 +34,7 @@ function NavigationBar({ pageIdx, setPageIdx }) {
 					Shop
 				</button>
 				<button
-					className={`mx-4 px-4 py-2 rounded-lg  ${
+					className={`mx-4 px-4 py-2 rounded-lg relative ${
 						pageIdx === 2
 							? "bg-(--color-primary)/20 text-(--color-primary)"
 							: "hover:bg-gray-100"
@@ -43,6 +43,11 @@ function NavigationBar({ pageIdx, setPageIdx }) {
 				>
 					<i className="fa-solid fa-cart-shopping mr-2"></i>
 					Cart
+					{numItems > 0 && (
+						<span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">
+							{numItems}
+						</span>
+					)}
 				</button>
 			</div>
 		</div>

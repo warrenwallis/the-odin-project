@@ -16,13 +16,13 @@ function App() {
 				addToCart={(item, quantity) => {
 					setCart((prevCart) => {
 						const existingItem = prevCart.find(
-							(cartItem) => cartItem.id === item.id
+							(cartItem) => cartItem.id === item.id,
 						);
 						if (existingItem) {
 							return prevCart.map((cartItem) =>
 								cartItem.id === item.id
 									? { ...cartItem, quantity: cartItem.quantity + quantity }
-									: cartItem
+									: cartItem,
 							);
 						} else {
 							return [...prevCart, { ...item, quantity }];
@@ -34,11 +34,15 @@ function App() {
 		2: <Cart cart={cart} setCart={setCart} />,
 	};
 
-	console.log(cart);
+	const numItems = cart.reduce((total, item) => total + item.quantity, 0);
 
 	return (
 		<>
-			<NavigationBar pageIdx={pageIdx} setPageIdx={setPageIdx} />
+			<NavigationBar
+				pageIdx={pageIdx}
+				setPageIdx={setPageIdx}
+				numItems={numItems}
+			/>
 			<div className="w-full h-full px-10 py-20 flex justify-center">
 				{pages[pageIdx]}
 			</div>
