@@ -8,6 +8,10 @@
 	--color-primary-text: #4b5467;
 }
 
+body {
+	min-width: 600px;
+}
+
 .icon-primary {
 	color: var(--color-primary);
 }

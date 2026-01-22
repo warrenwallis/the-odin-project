@@ -1,6 +1,6 @@
 function NavigationBar({ pageIdx, setPageIdx }) {
 	return (
-		<div className="bg-white px-10 py-5 shadow-xl flex justify-between">
+		<div className="bg-white px-10 py-5 shadow-xl flex justify-between items-center">
 			<div className="flex-1">
 				<button
 					className="font-bold flex items-center text-2xl"
