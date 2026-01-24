@@ -10,9 +10,7 @@ function App() {
 
 	const addToCart = (item, quantity) => {
 		setCart((prevCart) => {
-			const existingItem = prevCart.find(
-				(cartItem) => cartItem.id === item.id,
-			);
+			const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
 			if (existingItem) {
 				return prevCart.map((cartItem) =>
 					cartItem.id === item.id
@@ -23,6 +21,8 @@ function App() {
 			return [...prevCart, { ...item, quantity }];
 		});
 	};
+
+	console.log(cart);
 
 	return (
 		<>

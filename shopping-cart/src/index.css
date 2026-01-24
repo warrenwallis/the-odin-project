@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-	--background: #6a6d72;
+	--background: #fbfbfb;
 	--color-primary: #5400ff;
 	--color-primary-dark: #3a00b7;
 	--color-primary-light: #7a33ff;
@@ -10,6 +10,7 @@
 
 body {
 	min-width: 600px;
+	background-color: var(--background);
 }
 
 .icon-primary {

@@ -35,7 +35,7 @@ function ItemCard({ item, addToCart }) {
 						min={1}
 						onChange={(e) =>
 							setQuantity(
-								parseInt(e.target.value) >= 1 ? parseInt(e.target.value) : 1
+								parseInt(e.target.value) >= 1 ? parseInt(e.target.value) : 1,
 							)
 						}
 					/>
